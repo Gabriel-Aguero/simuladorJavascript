@@ -3,23 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="./css/style.css">
+
     <title>Curso de JavaScript</title>
+    
 </head>
 <body>    
-    <h1>Valoracion de Escalas</h1>
-      
-    <h2>Escala de Glasgow</h2>
-    <p>La escala de glasgow mide el nivel de conciencia y el estado neurológico de un paciente
-       con una posible lesión cerebral. Se basa en un examen graduado mediante puntuación numérica
-       de las respuestas a distintos estímulos. Respuesta Ocular, Respuesta Verbal y respuesta Motora.
-    </p>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Historia Clinica Electronica</h1>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col d-flex gap-3 col-12 mx-auto">
+                <button id= "btnGuardar" type="button" disabled class="btn btn-primary btn-lg">Guardar</button>            
+                <button id= "btnVerRegistros" type="button" class="btn btn-primary btn-lg">Ver Registros</button>
+                <button id= "btnIngresarPaciente" type="button" class="btn btn-primary btn-lg">Ingresar Paciente</button>                             
+            </div>            
+        </div>
+        <div class="row my-5">
+            <div class="col d-flex gap-3 col-12 mx-auto">
+                <input id= "hcInput" type="text" class="form-control" placeholder="Historia Clinica" disabled aria-label="First name">                
+                <input id= "apellidoInput" type="text" disabled class="form-control" placeholder="Apellido del Paciente" aria-label="First name">
+                <input id= "nombreInput" type="text" disabled class="form-control" placeholder="Nombre del paciente" aria-label="First name">
+            </div>            
+        </div>
+        <div class="row my-5">
+            <div class="col d-flex gap-3 col-12 mx-auto">                
+                <input id= "edadInput" type="text" disabled class="form-control" placeholder="Edad del paciente" aria-label="First name">                                           
+                <input type="date" class="date form-control" disabled id="fecha" style="width: 600px" />
+                <div class="btn-group" role="group" id="radio" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" value ="Masculino" name="btnradio" id="btnradio1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio1">Masculino</label>
+                  
+                    <input type="radio" class="btn-check" value ="Femenino" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Femenino</label>
+                  
+                    <input type="radio" class="btn-check"  value ="Otro" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Otro</label>
+                </div>
+            </div>            
+        </div>                    
+        
+        <div class="row">
+            <div class="col">
+                <table id ="tabla" class="table tabla-registro table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Historia Clinica</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Fecha de Ingreso</th>
+                    </tr>
+                    </thead>
+                    <tbody id="body">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+           
+        <div class="row mt-5">
+            <div class="col">
+                <button id= "btnListaFarmacia" type="button" class="btn btn-primary btn-lg">Listado Farmacia</button>            
+            </div>
+        </div>
 
-    <h2>Escala de Tal</h2>
-    <p>La escala o Score de Tal es una regla de predicción clínica que se utiliza ampliamente
-    en nuestro medio como herramienta de valoración de la severidad del sindrome bronquial obstructivo
-    y prevenir la hipoxemia</p>
-
+        <div class="row">
+            <div class="col">                
+                <table id ="tabla_farmacos" class="table tabla-registro table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Farmaco</th>
+                        <th scope="col">Presentacion</th>
+                        <th scope="col">Calculo</th>
+                        <th scope="col">Dosis</th>                
+                      </tr>
+                    </thead>
+                    <tbody id="body-farmacos">        
+                    </tbody>
+                </table>
+            </div>
+        </div>   
+                
+    </div>
+                
     <script src="./desafio_uno.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>    
 </body>
 </html>
