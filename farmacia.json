@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "medicacion": "Atropina",
+        "presentacion":"Ampolla 1mg/dl" ,
+        "calculo": "Diluir en 10 ml - Dosis obtenida 0,01 mg/kg",
+        "dosis": "0,1 ml/kg minimo 1 ml"
+    },
+
+    {
+        "id": 2,
+        "medicacion": "Adenosina",
+        "presentacion":"Ampolla (6 mg/ 2 ml)" ,
+        "calculo": "Dosis obtenida 0,1 mg/kg (max 6 mg)",
+        "dosis": "0,2 mg/kg (max 12 mg)"
+    },
+
+    {
+        "id": 3,
+        "medicacion": "Adrenalina",
+        "presentacion":"Ampolla (1 mg/ml)" ,
+        "calculo": "Diluir en 10 ml - Dosis obtenida 0,01 mg/ml",
+        "dosis": "0,1 mg/kg"
+    },
+    {
+        "id": 4,
+        "medicacion": "Noradrenalina",
+        "presentacion":"Ampolla de 4 ml (1mg/ml)" ,
+        "calculo": "Sacar 1 ml y diluir en 10",
+        "dosis": "0,05 kg/minuto"
+    }
+]
