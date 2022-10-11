@@ -1,4 +1,3 @@
-let botonPaciente = document.getElementById("btnPaciente");
 let btnGuardar = document.getElementById("btnGuardar");
 let genero = document.querySelector(".radio:checked");
 
@@ -34,8 +33,9 @@ else{
     console.log("Seteando por primera vez la lista de pacientes");
     listaPaciente.push(paciente1, paciente2);
     localStorage.setItem("listaPaciente", JSON.stringify(listaPaciente));
- 
 }
+mostrarRegistro();
+
 
 // Funcion para listar los registros 
 function mostrarRegistro(){    
@@ -115,12 +115,6 @@ botonGuardar.addEventListener("click", ()=>{
     ingresarPaciente(listaPaciente);
 })
 
-let verRegistro = document.getElementById("btnVerRegistros");
-verRegistro.addEventListener("click", ()=>{
-    mostrarRegistro();  
-    //generos(); 
-})
-
 let btnIngresarPaciente = document.getElementById("btnIngresarPaciente");
 btnIngresarPaciente.addEventListener("click", ()=>{
     generarHistoriaClinca();        
@@ -142,25 +136,3 @@ let fechaActual = document.getElementById("fechaActual");
 const fechaHoy = DateTime.now();
 let fecha = fechaHoy.toLocaleString(DateTime.DATETIME_MED);
 fechaActual.value = fecha;
-
-
-let btnPaciente = document.getElementById("btnPaciente");
-
-
-
-
-// function para mostrar o no la pantalla de pacientes
-btnPaciente.addEventListener("click", ()=> {      
-    pantallaPaciente();
-});
-function pantallaPaciente(){
-    let formFarmacia = document.getElementById("form-farmacia");
-    formFarmacia.classList.add("form-farmacia");
-    // reseteamos el contenido
-    let contenido = document.getElementById("contenido");    
-    contenido.innerHTML = ` `;
-    
-    // eliminamos la clase que nos oculta el formulario de paciente. 
-    let formPaciente = document.getElementById("form-paciente");
-    formPaciente.classList.remove("form-paciente");
-}

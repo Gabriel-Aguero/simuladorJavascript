@@ -1,4 +1,3 @@
-
 let btnFarmacia = document.getElementById("btnFarmacia");
 let formFarmacia = document.getElementById("form-farmacia");
 
@@ -17,18 +16,6 @@ class farmacia{
     }
 }
 
-btnFarmacia.addEventListener("click", ()=>{
-    pantallaFarmacia();
-});
-
-// Cargo la pantalla de Farmacia 
-function pantallaFarmacia(){
-    let formPaciente = document.getElementById("form-paciente");
-    formPaciente.classList.add("form-paciente");
-    let contenido = document.getElementById("contenido");    
-    contenido.innerHTML = ` `;
-    formFarmacia.classList.remove("form-farmacia");    
-} 
 
 // creamos el array para la lista de farmacos 
 // y capturamos los datos del archivo .json
@@ -191,6 +178,7 @@ pedidoAgregado.forEach((pedidoEnCarrito, indice)=>{
 
 let botonBuscar = document.getElementById("btnBuscador");
 let cajaBuscar = document.getElementById("buscador");
+
 botonBuscar.addEventListener("click", ()=>{
     event.preventDefault();
     let farmacoBuscado = listaFarmacia.filter(elem => elem.medicacion.toLowerCase() === cajaBuscar.value.toLowerCase());

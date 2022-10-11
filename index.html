@@ -11,176 +11,132 @@
     <title>Curso de JavaScript</title>
     
 </head>
-<body>  
-    <div class="container-fluid">   
-        <header class="header">
-            <h4>Dasboard</h4>
-            <div class="profile">
-                <img class="profile-image" src="./assets/imagenes/user.png" alt="">
-                <p class="profile-name">User Name</p>    
-            </div>            
-        </header>   
-            
-            <!-- Menu hamburguesa  -->        
-            <input type="checkbox" id="toggle">
-            <label class="side-toggle" for="toggle">
-                <span class="fas fa-bars"></span>
-            </label>      
-        <!-- sidebar -->                       
-        <div class="navbar">
-            <div id="btnPaciente" class="navbar-menu">
-                <span class="fa-sharp fa-solid fa-users"></span>               
-                <p>Pacientes</p>
+<body> 
+    <!-- Menu de navegacion  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto gap-2">
+                <button id="btnHome" type="button" class="btn btn-outline-primary">Home</button>
+                <button id="btnPaciente" type="button" class="btn btn-outline-primary">Paciente</button>
+                <button id="btnFarmacia" type="button" class="btn btn-outline-primary">Farmacia</button>
             </div>
-            <div id="btnFarmacia" class="navbar-menu">
-                <span class="fa-solid fa-capsules"></span>
-                <p>Farmacia</p>
-            </div>
-            <div class="navbar-menu">
-                <span class="fa-sharp fa-solid fa-user-doctor"></span>
-                <p> Cirugia</p>
-            </div>
-            <div class="navbar-menu">
-                <span class="fa-sharp fa-solid fa-utensils"></span>
-                <p>Nutricion</p>
-            </div>
-            <div class="navbar-menu">
-                <span class="fa-solid fa-bacterium"></span>
-                <p>Infectologia</p>
-            </div>
-            <div class="navbar-menu">
-                <span class="fa-solid fa-user-nurse"></span>
-                <p>Enfermeria</p>
-            </div>                
-            <div class="navbar-menu">
-                <span class="fa-solid fa-image"></span>
-                <p>Imagenes</p>
-            </div>                                       
-        </div>                
+          </div>
+        </div>
+    </nav>
 
-        <main class="main">           
-                                                
-            <div class="dasboard-container" id="contenido">                                                        
-            </div>               
-               
-            <!-- pantalla de paciente  -->
-            <div classs= "container mt-5" >        
-                <form class="form-paciente" align="center" id="form-paciente">            
-                    <!-- botones -->
-                    <div class="col d-grid gap-2 d-md-flex justify-content-start">
-                        <button id= "btnGuardar" type="button" class="btn btn-primary btn-lg">Guardar</button>            
-                        <button id= "btnVerRegistros" type="button" class="btn btn-primary btn-lg">Ver Registros</button>
-                        <button id= "btnIngresarPaciente" type="button" class="btn btn-primary btn-lg">Ingresar Paciente</button>                             
-                    </div>            
-                   
-                    <div class="row mt-5 g-3 align-items-center">
-                        <div class="col-lg-2 col-md-6">
-                            <label for="historiaClinica" class="form-label">Historia Clinica</label>
-                            <input id= "historiaClinica" type="text" disabled class="form-control" placeholder="" aria-label="First name">                
-                        </div>
 
-                        <div class="col-lg-2 col-md-6">
-                            <label for="Fecha-de-Ingreso" class="form-label">Fecha de Ingreso</label>
-                            <input id= "fechaActual" type="text" class="form-control" aria-label="First name" readOnly>                           
-                        </div>
+    <div class="container">
 
-                        <div class="col-lg-2 col-md-6">
-                            <label for="apellido" class="form-label">Apellido</label>
-                            <input id= "apellido" type="text"  class="form-control" placeholder="Ingrese el Apellido" aria-label="First name">
-                        </div>
+        <!-- Mudulo estado de la sala  -->
+        <div id="contenido" class="my-5">                                                        
+        </div>
 
-                        <div class="col-lg-2 col-md-6">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input id= "nombre" type="text"  class="form-control" placeholder="Ingrese el Nombre" aria-label="First name">
-                        </div>
+        <!-- Modulo pacientes  -->
+        <div class="row my-3 formu_paciente" id="idForm-paciente">
+            <!-- Formulario para el Ingreso de pacientes -->
+            <div class="col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                <h1>Registro de Pacientes </h1>
+                <div class="mb-3">
+                    <label for="historiaClinica" class="form-label">Historia Clinica</label>
+                    <input id= "historiaClinica" type="text" disabled class="form-control" placeholder="" aria-label="First name">
+                </div>
+                <div class="mb-3">
+                    <label for="Fecha-de-Ingreso" class="form-label">Fecha de Ingreso</label>
+                    <input id= "fechaActual" type="text" class="form-control" aria-label="First name" readOnly>
+                </div>
+                <div class="mb-3">
+                    <label for="edad" class="form-label">Edad</label>    
+                    <input id= "edad" type="text" class="form-control" placeholder="Ingrese la Edad" aria-label="First name">
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input id= "apellido" type="text"  class="form-control" placeholder="Ingrese el Apellido" aria-label="First name">
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input id= "nombre" type="text"  class="form-control" placeholder="Ingrese el Nombre" aria-label="First name">
+                </div>
 
-                        <div class="col-lg-2 col-md-6">
-                            <label for="edad" class="form-label">Edad</label>    
-                            <input id= "edad" type="text" class="form-control" placeholder="Ingrese la Edad" aria-label="First name">                                           
-                        </div>
-
-                        <div class="col-lg-2 col-md-6">
-                            <label for="buscar" class="form-label">Genero</label>                                
-                            <div class="btn-group" role="group" id="radio" aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check" value ="Masculino" name="btnradio" id="btnradio1" autocomplete="off">
-                                <label class="btn btn-outline-primary" for="btnradio1">Masculino</label>
-                                
-                                <input type="radio" class="btn-check" value ="Femenino" name="btnradio" id="btnradio2" autocomplete="off">
-                                <label class="btn btn-outline-primary" for="btnradio2">Femenino</label>
-                                
-                                <input type="radio" class="btn-check"  value ="Otro" name="btnradio" id="btnradio3" autocomplete="off">
-                                <label class="btn btn-outline-primary" for="btnradio3">Otro</label>
-                            </div>
-                        </div>                                                                 
+                <div class="my-5">
+                    <label for="buscar" class="form-label">Genero</label>                                
+                    <div class="btn-group" role="group" id="radio" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" value ="Masculino" name="btnradio" id="btnradio1" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio1">Masculino</label>
+                        
+                        <input type="radio" class="btn-check" value ="Femenino" name="btnradio" id="btnradio2" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio2">Femenino</label>
+                        
+                        <input type="radio" class="btn-check"  value ="Otro" name="btnradio" id="btnradio3" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio3">Otro</label>
                     </div>
+                </div>
 
-                    <div class="row my-5">
-                        <div class="col">
-                        </div>
-                    </div>                                                                      
-                    
-                    <div class="row">
-                        <div class="col">
-                            <table id ="tabla" class="table tabla-registro table-striped">
-                                <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Historia Clinica</th>
-                                    <th scope="col">Apellido</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Edad</th>
-                                    <th scope="col">Genero</th>
-                                    <th scope="col">Fecha de Ingreso</th>
-                                </tr>
-                                </thead>
-                                <tbody id="body">
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </form>     
-            </div>
-            
-            <!-- pantalla de farmacia  -->
-            <div id="form-farmacia" class="form-farmacia">
-                <form  align="center">
-                    <div class="row">
-                        <div class="col-2 d-flex">
-                            <form class="d-flex">
-                                <input id= "buscador" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                                <button id= "btnBuscador" class="btn btn-outline-primary" type="submit">Buscar</button>       
-                            </form>               
-                        </div>
-                    </div>
-                    <div class="row my-5">
-                        <div class="col d-grid gap-3 d-md-flex justify-content-start">
-                            <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModal" class="btn btn-primary"><i class="fas fa-shopping-cart fa-2x"></i></a>
-                        </div>                    
-                    </div>
-                    
-                    <div class="row mt-5">
-                        <div class="col">                
-                            <table id ="tabla_farmacos" class="table tabla-registro table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Farmaco</th>
-                                        <th scope="col">Presentacion</th>
-                                        <th scope="col">Calculo</th>
-                                        <th scope="col">Dosis</th>
-                                        <th scope="col">Agregar</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="body-farmacos">        
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>                               
-                </form>
+
+                <div class="d-grid gap-2">
+                    <button id= "btnIngresarPaciente" type="button" class="btn btn-primary btn-lg">Ingresar Paciente</button>
+                    <button id= "btnGuardar" type="button" class="btn btn-primary btn-lg">Guardar</button>                                         
+                </div>
             </div>
 
-            <!-- modal. Aporece al cargar una medicacion -->
+            <!-- Tabla de lista de paciente  -->
+            <div class="col-xs-12 col-md-8 col-lg-8 col-xl-8">
+                <table id ="tabla" class="table tabla-registro table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Historia Clinica</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Fecha de Ingreso</th>
+                    </tr>
+                    </thead>
+                    <tbody id="body">         
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modulo Farmacia  -->
+        <div class="row my-3 form-farmacia" id="form-farmacia">
+            <h1>Listado de Farmacia</h1>
+            <div class="col-xs-12 col-md-8 col-lg-12 col-xl-12">
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModal" class="btn btn-primary"><i class="fas fa-shopping-cart fa-1x"></i></a>
+                      <form class="d-flex">
+                        <input id= "buscador" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button id= "btnBuscador" class="btn btn-outline-primary" type="submit">Buscar</button>
+                      </form>
+                    </div>
+                  </nav>
+            </div>
+
+            <div class="col-xs-12 col-md-8 col-lg-12 col-xl-12 my-5">
+                <table id ="tabla_farmacos" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Farmaco</th>
+                            <th scope="col">Presentacion</th>
+                            <th scope="col">Calculo</th>
+                            <th scope="col">Dosis</th>
+                            <th scope="col">Agregar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-farmacos">        
+                    </tbody>
+                </table>
+            </div> 
+
+
+             <!-- modal. Aporece al cargar una medicacion -->
             <div class="modal fade" id="idModal" tabindex="-1">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
@@ -198,17 +154,18 @@
                   </div>
                 </div>
             </div>
-        </main>
-    </div>              
-                    
+
+        </div>
+
+    </div>
+                   
     <script src="https://kit.fontawesome.com/bc1529d8f6.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.4/build/global/luxon.min.js"></script>
-    <script src="./js/estadoSala.js"></script>
-    <script src="./js/paciente.js"></script>
-    <script src="./js/farmacia.js"></script>
-    <script src="./js/newPaciente.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script> 
+    <script src="./js/paciente.js"></script>
+    <script src="./js/estadoSala.js"></script>
+    <script src="./js/farmacia.js"></script>
 </body>
 </html>

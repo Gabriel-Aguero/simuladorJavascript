@@ -7,7 +7,7 @@ function cargarSala(){
     
     contenido.innerHTML = `
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-4">
+                        <div class="col-xs-12 col-md-4 col-lg-4 col-xl-4">
                             <div class="card text-dark bg-light mb-3" style="max-width: 28rem;">
                                 <div class="card-header">Habitación 001</div>
                                 <div class="card-body">
@@ -18,7 +18,7 @@ function cargarSala(){
                             </div>
                         </div>
                         
-                        <div class="col-sm-4">
+                        <div class="col-xs-12 col-md-4 col-lg-4 col-xl-4">
                             <div class="card text-dark bg-light mb-3" style="max-width: 28rem;">
                                 <div class="card-header">Habitación 002</div>
                                 <div class="card-body">
@@ -28,7 +28,7 @@ function cargarSala(){
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-xs-12 col-md-4 col-lg-4 col-xl-4">
                             <div class="card text-dark bg-light mb-3" style="max-width: 28rem;">
                                 <div class="card-header">Habitación 003</div>
                                 <div class="card-body">
@@ -38,7 +38,7 @@ function cargarSala(){
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-xs-12 col-md-4 col-lg-4 col-xl-4">
                             <div class="card text-dark bg-light mb-3" style="max-width: 28rem;">
                                 <div class="card-header">Habitación 004</div>
                                 <div class="card-body">
@@ -48,7 +48,7 @@ function cargarSala(){
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-xs-12 col-md-4 col-lg-4 col-xl-4">
                             <div class="card text-dark bg-light mb-3" style="max-width: 28rem;">
                                 <div class="card-header">Habitación 005</div>
                                 <div class="card-body">
@@ -58,7 +58,7 @@ function cargarSala(){
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-xs-12 col-md-4 col-lg-4 col-xl-4">
                             <div class="card text-dark bg-light mb-3" style="max-width: 28rem;">
                                 <div class="card-header">Habitación 006</div>
                                 <div class="card-body">
@@ -68,9 +68,33 @@ function cargarSala(){
                                 </div>
                             </div>
                         </div>
-                    </div> 
-
-                                    
+                    </div>           
                         `;
+}
 
-};
+
+let botonPaciente = document.getElementById("btnPaciente");
+let botonFarmacia = document.getElementById("btnFarmacia");
+let botonHome = document.getElementById("btnHome");
+
+let contenidoHome = document.getElementById("contenido");
+let formuFarmacia = document.getElementById("form-farmacia");
+let formuPaciente = document.getElementById("idForm-paciente");
+
+botonPaciente.addEventListener("click", ()=>{
+    contenidoHome.classList.add("sala");
+    formuFarmacia.classList.add("form-farmacia");
+    formuPaciente.classList.remove("formu_paciente");
+})
+
+botonHome.addEventListener("click", ()=>{
+    contenidoHome.classList.remove("sala");
+    formuFarmacia.classList.add("form-farmacia");
+    formuPaciente.classList.add("formu_paciente");
+})
+
+botonFarmacia.addEventListener("click", ()=>{
+    contenidoHome.classList.add("sala");
+    formuFarmacia.classList.remove("form-farmacia")
+    formuPaciente.classList.add("formu_paciente");
+})
