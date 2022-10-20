@@ -179,17 +179,16 @@ pedidoAgregado.forEach((pedidoEnCarrito, indice)=>{
 let botonBuscar = document.getElementById("btnBuscador");
 let cajaBuscar = document.getElementById("buscador");
 
-botonBuscar.addEventListener("click", ()=>{
-    event.preventDefault();
-    let farmacoBuscado = listaFarmacia.filter(elem => elem.medicacion.toLowerCase() === cajaBuscar.value.toLowerCase());
-    farmacoBuscado == 0 ?  
-        Swal.fire({
-            icon: 'info',
-            title: 'Lo siento',
-            text: 'No existen datos con esa busqueda!!!',
-        }) :
-    console.log(farmacoBuscado);
+
+
+cajaBuscar.addEventListener("keyup", e =>{
+
+    if(e.target.matches("#buscador")){
+        document.querySelectorAll("tr").forEach(farmaco =>{
+            farmaco.textContent.toUpperCase().includes(e.target.value.toUpperCase())
+                ?farmaco.classList.remove("filtro")
+                :farmaco.classList.add("filtro")
+        })
+    }
 })
-
-
 

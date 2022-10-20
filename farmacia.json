@@ -28,5 +28,12 @@
         "presentacion":"Ampolla de 4 ml (1mg/ml)" ,
         "calculo": "Sacar 1 ml y diluir en 10",
         "dosis": "0,05 kg/minuto"
+    },
+    {
+        "id": 5,
+        "medicacion": "Midazolan",
+        "presentacion":"Ampolla de 3 ml (5mg/ml)" ,
+        "calculo": "Sacar 1 ml y diluir en 10",
+        "dosis": "0,05 - 0,2 mg/kg/dosis"
     }
 ]

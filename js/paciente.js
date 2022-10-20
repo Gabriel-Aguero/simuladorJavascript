@@ -3,7 +3,7 @@ let genero = document.querySelector(".radio:checked");
 
 class Paciente {
 
-    constructor(id, hc, apellido, nombre, edad, genero, fechaIngreso, antecedentes, diagnostico, estudiosComp){
+    constructor(id, hc, apellido, nombre, edad, genero, antecedentes, diagnostico,fechaIngreso){
         this.id = id;
         this.hc = hc;
         this.apellido = apellido;
@@ -13,14 +13,12 @@ class Paciente {
         this.fechaIngreso = fechaIngreso;
         this.antecedentes = antecedentes;
         this.diagnostico = diagnostico;
-        this.estudiosComp = estudiosComp;
-
     }    
 }
 
 
-const paciente1 = new Paciente(1, "HC001","AGUERO","GABRIEL", "38", "Masculino", "2022-08-14", "Sin Antecedentes","Gripe", "RX");
-const paciente2 = new Paciente(2, "HC002","PEREZ","GIMENA", "32", "Femenino", "2022-06-05","Tabaquista", "Neumonia","Tomografia");
+const paciente1 = new Paciente(1, "HC001","AGUERO","GABRIEL", "38", "Masculino", "Sin Antecedentes","Gripe","2022-08-14");
+const paciente2 = new Paciente(2, "HC002","PEREZ","GIMENA", "32", "Femenino","Tabaquista", "Neumonia","2022-06-05");
 
 let listaPaciente = [];
 
@@ -53,6 +51,8 @@ function mostrarRegistro(){
                                          <td>${paciente.nombre}</td>
                                          <td>${paciente.edad}</td>
                                          <td>${paciente.genero}</td>
+                                         <td>${paciente.antecedentes}</td>
+                                         <td>${paciente.diagnostico}</td>
                                          <td>${paciente.fechaIngreso}</td>
                                         </tr>
                                                                                                                                                    
@@ -66,23 +66,28 @@ function limpiarCampos(){
     let nombre =document.getElementById("nombre");
     let hc = document.getElementById("historiaClinica");
     let edad = document.getElementById("edad"); 
+    let antecedentes = document.getElementById("antecedentes");
+    let diagnostico = document.getElementById("diagnostico");
     
-
     apellido.value = "";
     nombre.value = "";
     hc.placeholder = "Historia Clinica";
     edad.value = "";
+    antecedentes.value = "";
+    diagnostico.value = "";
 }
 
 //Function para ingresar un nuevo registro 
 function ingresarPaciente(array){   
+    let hc = document.getElementById("historiaClinica");     
     let apellido = document.getElementById("apellido");
     let nombre =document.getElementById("nombre");
-    let hc = document.getElementById("historiaClinica");     
     let edad = document.getElementById("edad"); 
     let genero = document.querySelector("input[name='btnradio']:checked").value;
+    let antecedentes = document.getElementById("antecedentes");
+    let diagnostico = document.getElementById("diagnostico");
     let fecha = document.getElementById("fechaActual");
-    let pacienteIngresado = new Paciente(array.length+1, hc.placeholder, apellido.value.toUpperCase(), nombre.value.toUpperCase(),edad.value, genero,fecha.value);
+    let pacienteIngresado = new Paciente(array.length+1,hc.placeholder,apellido.value.toUpperCase(),nombre.value.toUpperCase(),edad.value, genero,antecedentes.value,diagnostico.value,fecha.value);
     array.push(pacienteIngresado);   
     localStorage.setItem("listaPaciente", JSON.stringify(array));
     console.log(array);
@@ -126,8 +131,6 @@ btnIngresarPaciente.addEventListener("click", ()=>{
     edad.disabled = false;                  
     let botonGuardar = document.getElementById("btnGuardar");
     botonGuardar.disabled = false;
-
-
 })
 
 // agregamos la libreria de luxon
